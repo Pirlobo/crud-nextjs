@@ -6,35 +6,15 @@ export default NextAuth({
 
   // https://next-auth.js.org/configuration/providers
   providers: [
-    // Providers.Email({
-    //   server: {
-    //     host: 'smtp.sendgrid.net',
-    //     port: 587, 
-    //     auth: {
-    //       user: 'apikey',
-    //       pass: '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'
-    //     }
-    //   },
-    //   from: 'bonguyens2001@gmail.com'
-    // }),
-    // Providers.Apple({
-    //   clientId: process.env.APPLE_ID,
-    //   clientSecret: {
-    //     appleId: process.env.APPLE_ID,
-    //     teamId: process.env.APPLE_TEAM_ID,
-    //     privateKey: process.env.APPLE_PRIVATE_KEY,
-    //     keyId: process.env.APPLE_KEY_ID,
-    //   },
-    // }),
     
-    // I have no reason why I can only access process.env.AUTH0_ID
+    
     Providers.Auth0({
-      // clientId: 'mM9AfSglzytdPhNB97hrg6GiMpo6feOP',
+      
       clientId: process.env.AUTH0_ID,
-      // clientSecret: 'hBfjNjxU_lNJ_z3MDAJAV4FoI8qFs2L39rqZFMI2RTRprr5jbTGs4WMpBmblIBvo',
+      
       clientSecret: process.env.AUTH0_SECRET,
       domain: process.env.AUTH0_DOMAIN,
-      // domain: 'dev-874refju.us.auth0.com',
+      
       authorizationUrl:'https://dev-874refju.us.auth0.com/authorize?response_type=code&prompt=login',
     }),
     Providers.Facebook({

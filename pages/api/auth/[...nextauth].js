@@ -1,21 +1,18 @@
-import NextAuth from "next-auth"
-import Providers from "next-auth/providers"
+import NextAuth from "next-auth";
+import Providers from "next-auth/providers";
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
-
   // https://next-auth.js.org/configuration/providers
   providers: [
-    
-    
     Providers.Auth0({
-      
       clientId: process.env.AUTH0_ID,
-      
+
       clientSecret: process.env.AUTH0_SECRET,
       domain: process.env.AUTH0_DOMAIN,
-      
-      authorizationUrl:'https://dev-874refju.us.auth0.com/authorize?response_type=code&prompt=login',
+
+      authorizationUrl:
+        "https://dev-874refju.us.auth0.com/authorize?response_type=code&prompt=login",
     }),
     Providers.Facebook({
       clientId: process.env.FACEBOOK_ID,
@@ -41,15 +38,15 @@ export default NextAuth({
   // * You must install an appropriate node_module for your database
   // * The Email provider requires a database (OAuth providers do not)
   database: {
-    type : 'sqlite',
-    database : ':memory:',
-    synchronize : true
+    type: "sqlite",
+    database: ":memory:",
+    synchronize: true,
   },
 
   // The secret should be set to a reasonably long random string.
   // It is used to sign cookies and to sign and encrypt JSON Web Tokens, unless
   // a separate secret is defined explicitly for encrypting the JWT.
-  secret: 'd0a10c344d37037f992291d538836d5a',
+  secret: "d0a10c344d37037f992291d538836d5a",
 
   session: {
     // Use JSON Web Tokens for session instead of database sessions.
@@ -109,4 +106,4 @@ export default NextAuth({
 
   // Enable debug messages in the console if you are having problems
   debug: false,
-})
+});

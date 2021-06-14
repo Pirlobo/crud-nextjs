@@ -18,6 +18,12 @@ export default function App({ Component, pageProps }) {
         }}
         session={pageProps.session}
       >
+      <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+    crossorigin="anonymous"
+  />
       <SWRConfig value = {{dedupingInterval : 5000}}>
       <div className="center">
         <div className = "component__container">

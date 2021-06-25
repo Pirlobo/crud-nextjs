@@ -44,3 +44,15 @@ a:hover {
 .component__container{
   width: 50vw;
 }
+.image__center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+td.middle{
+  vertical-align: middle !important;
+}
+.htitle > i {
+  margin-left: 1rem;
+  transform: scale(1.5);
+}
